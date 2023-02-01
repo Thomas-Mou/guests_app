@@ -1,19 +1,21 @@
-# Guest Application
+# Guest App with Postgres Container
 
+A simplistic flask and postgres stack for demo purpose.
 
-A simple application with a flask-backend and a SQLite database.
+👉 To launch the stack:
 
-To try it : 
+```bash
 
-1 - Install dependencies with pipenv 
-👉 ```pipenv install --dev && cd app/```
+docker compose up -d
 
-2 - Set up database
-👉 ```bash
-FLASK_APP=app.py pipenv run flask db init && FLASK_APP=app.py  pipenv run flask db migrate &&  FLASK_APP=app.py pipenv run flask db upgrade```
+```
 
-2 - Launch flask web server
-👉 ```bash
-FLASK_APP=app.py pipenv run flask run -p 5000```
+👉 Try it by heading over to [localhost:5000](http://localhost:5000/)
 
-3 - 👉 Head over to [localhost:5000](http://localhost:5000) and test it!
+👉 To stop & remove containers:
+
+```bash
+
+docker compose down --volumes
+
+```
