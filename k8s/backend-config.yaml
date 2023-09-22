@@ -21,6 +21,13 @@ spec:
       - name: backend
         ports:
         - containerPort: 5000
+        resources:
+            requests:
+              memory: "64Mi"
+              cpu: "250m"
+            limits:
+              memory: "512Mi"
+              cpu: "500m"
         env:
           - name: POSTGRES_DB
             valueFrom:
