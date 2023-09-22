@@ -13,4 +13,4 @@ WORKDIR /app
 ENV FLASK_APP app.py
 EXPOSE 5000
 
-CMD flask db init && flask db migrate && flask db upgrade && flask run -h 0.0.0.0
+CMD flask db init && flask db migrate && flask db upgrade && flask run -h 0.0.0.0 --port 5000
