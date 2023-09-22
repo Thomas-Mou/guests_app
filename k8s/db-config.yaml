@@ -54,7 +54,7 @@ spec:
           name: db
           volumeMounts:
           - name: persistent-storage
-            mountPath: /mnt-efs
+            mountPath: /var/lib/postgresql/data 
           ports:
             - containerPort: 5432
           resources:
@@ -69,4 +69,4 @@ spec:
       volumes:
         - name: persistent-storage
           persistentVolumeClaim:
-            claimName: postgres-pv1-claim
+            claimName: postgres-pv-claim
