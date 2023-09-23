@@ -11,7 +11,6 @@ spec:
   selector:
     matchLabels:
       service: backend
-  strategy: {"RollingUpdate"}
   template:
     metadata:
       labels:
@@ -31,6 +30,14 @@ spec:
             value:  postgresql://postgres:$(POSTGRES_PASSWORD)@db-service:5432/guests_db
         image: backend
         imagePullPolicy: Never
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "250m"
+          limits:
+            memory: "512Mi"
+            cpu: "500m"
+
 
       restartPolicy: Always
 
