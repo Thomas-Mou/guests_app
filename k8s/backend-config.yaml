@@ -11,7 +11,6 @@ spec:
   selector:
     matchLabels:
       service: backend
-  strategy: {"RollingUpdate"}
   template:
     metadata:
       labels:
@@ -46,8 +45,6 @@ spec:
                 key: password
           - name: DATABASE_URL
             value: postgresql://postgres:$(POSTGRES_PASSWORD)@$(POSTGRES_USER):5432/$(POSTGRES_DB)
-          - name: FLASK_ENV
-            value: development
         image: <replace-with-your-image-repo-url>/<your_image_name>:latest
         imagePullPolicy: Always
 
