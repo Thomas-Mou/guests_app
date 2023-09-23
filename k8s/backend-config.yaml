@@ -44,10 +44,9 @@ spec:
                 name: postgres-credentials
                 key: password
           - name: DATABASE_URL
-            value: postgresql://postgres:$(POSTGRES_PASSWORD)@$(POSTGRES_USER):5432/$(POSTGRES_DB)
-        image: <replace-with-your-image-repo-url>/<your_image_name>:latest
-        imagePullPolicy: Always
-
+            value:  postgresql://postgres:$(POSTGRES_PASSWORD)@$(POSTGRES_USER):5432/$(POSTGRES_DB)
+        image: backend
+        imagePullPolicy: Never
       restartPolicy: Always
 
 ---
