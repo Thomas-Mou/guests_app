@@ -7,6 +7,7 @@ RUN pip install -r requirements.txt
 COPY app/templates /app/templates
 COPY app/app.py app/app.py
 COPY app/models.py app/models.py
+COPY app/migrations app/migrations
 
 WORKDIR app/
 
