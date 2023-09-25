@@ -10,10 +10,10 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
-
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+- task: AzureContainerApps@1
+  inputs:
+    appSourcePath: '$(Build.SourcesDirectory)/src'
+    azureSubscription: '733ed6f9-010f-4d62-8993-d622330af8cb'
+    acrName: 'thomasmourepo'
+    containerAppName: 'thomasmouapp'
+    resourceGroup: 'Thomas-Mou'
